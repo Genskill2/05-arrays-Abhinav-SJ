@@ -35,7 +35,32 @@ float average(int a[], int n)
 
 int factors(int n, int a[])
 {
-   
+   int product=1,i,count;
+   while(product != n)
+   {
+      for(i=2;i<=n/2;i++)
+      {
+         if(i!=2)
+         {
+            count=0;
+            for(j=2; j<=i/2;j++)
+            {
+               if(i%j == 0)
+                  count++;
+            } 
+            if(count == 0)
+            {
+               if(n%i == 0)
+                  product *= i;
+            }
+         }
+         else
+         {
+            if(n%i == 0)
+               product *= i;
+         }
+      }
+   }
 }
 
 int mode(int a[], int n)
