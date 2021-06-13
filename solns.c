@@ -32,17 +32,19 @@ float average(int a[], int n)
    return sum/n;
 }
 
-int factors(int a[], int n)
+int factors(int n, int a[])
 {
+   
 }
 
 int mode(int a[], int n)
 {
-   int c[10]={0,0,0,0,0,0,0,0,0,0};
-   int i,j;
+   int c[10];
+   int i,j,k;
    for(i=0; i<n; i++)
    {
-      c[a[i]]++;
+      k = a[i];
+      (c[k])++;
    }
    int max = c[0];
    for(j=1; j<n; j++)
