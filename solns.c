@@ -1,5 +1,6 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
+#include<stdlib.h>
 int max(int a[], int n)
 {
    int max = a[0];
@@ -47,7 +48,7 @@ int mode(int a[], int n)
       if(a[i] > max)
          max = a[i];
    }
-   counts = (int*) malloc ((max+1)*sizeof(int));
+   int* counts = (int*) malloc ((max+1)*sizeof(int));
    for(i=0;i<=max;i++)
    {
       counts[i] = 0;
