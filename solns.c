@@ -39,12 +39,13 @@ int factors(int a[], int n)
 int mode(int a[], int n)
 {
    int c[10]={0,0,0,0,0,0,0,0,0,0};
-   for(int i=0; i<n; i++)
+   int i,j;
+   for(i=0; i<n; i++)
    {
       c[a[i]]++;
    }
    int max = c[0];
-   for(int j=1; j<n; j++)
+   for(j=1; j<n; j++)
    {
      if(c[j] > max)
         max = c[j];
