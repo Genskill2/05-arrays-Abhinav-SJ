@@ -47,7 +47,7 @@ int mode(int a[], int n)
       if(a[i] > max)
          max = a[i];
    }
-   int counts[max+1];
+   counts = (int*) malloc ((max+1)*sizeof(int));
    for(i=0;i<=max;i++)
    {
       counts[i] = 0;
