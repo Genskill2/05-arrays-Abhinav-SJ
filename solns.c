@@ -22,4 +22,15 @@ int min(int a[], int n)
    return min;
 }
 
-int 
+float average(int a[], int n)
+{
+}
+
+int factors(int a[], int n)
+{
+}
+
+int mode(int a[], int n)
+{
+   
+}
