@@ -1,6 +1,7 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
 #include<stdlib.h>
+#include<math.h>
 int max(int a[], int n)
 {
    int max = a[0];
@@ -35,32 +36,28 @@ float average(int a[], int n)
 
 int factors(int n, int a[])
 {
-   int product=1,i,count;
-   while(product != n)
+   int i,j=0,count=0;
+   while(n%2 == 0)
    {
-      for(i=2;i<=n/2;i++)
+      a[j++]=2;
+      count++;
+      n/=2;
+   }
+   for(i=3;i<sqrt(n);i++)
+   {
+      while(n%i == 0)
       {
-         if(i!=2)
-         {
-            count=0;
-            for(j=2; j<=i/2;j++)
-            {
-               if(i%j == 0)
-                  count++;
-            } 
-            if(count == 0)
-            {
-               if(n%i == 0)
-                  product *= i;
-            }
-         }
-         else
-         {
-            if(n%i == 0)
-               product *= i;
-         }
+         a[j++]=i;
+         count++;
+         n/=i;
       }
    }
+   if(n>2)
+   {
+      a[j++]=n;
+      count++;
+   }
+   return count;
 }
 
 int mode(int a[], int n)
