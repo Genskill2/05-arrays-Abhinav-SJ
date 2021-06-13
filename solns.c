@@ -61,7 +61,7 @@ int mode(int a[], int n)
    for(j=1; j<n; j++)
    {
      if(counts[j] > max)
-        max = c[j];
+        max = counts[j];
    }
    return j;
 }
