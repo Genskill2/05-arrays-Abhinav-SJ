@@ -40,29 +40,20 @@ int factors(int n, int a[])
 
 int mode(int a[], int n)
 {
-   
-   int i,j,k,max;
-   max =a[0];
-   for(i=1; i<n; i++)
+   int i,count,j,value,maxcount=0;
+   for(i=0; i<n; i++)
    {
-      if(a[i] > max)
-         max = a[i];
+      count=0;
+      for(j=0;j<n;j++)
+      {
+         if(a[i] == a[j])
+            count++;
+      }
+      if(count>maxcount)
+      {
+         value=a[i];
+         maxcount = count;
+      }
    }
-   int* counts = (int*) malloc ((max+1)*sizeof(int));
-   for(i=0;i<=max;i++)
-   {
-      counts[i] = 0;
-   }
-   for(i=0;i<n;i++)
-   {
-      k = a[i];
-      counts[k]++;
-   }
-   max = counts[0];
-   for(j=1; j<n; j++)
-   {
-     if(counts[j] > max)
-        max = counts[j];
-   }
-   return j;
+   return value;
 }
